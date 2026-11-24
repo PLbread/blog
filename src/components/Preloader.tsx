@@ -5,6 +5,8 @@
  * 所以它只在首次进入 / 刷新时出现一次。
  */
 export function Preloader() {
+  const basePath = process.env.PAGES_BASE_PATH ?? "";
+
   return (
     <div
       aria-hidden="true"
@@ -12,11 +14,16 @@ export function Preloader() {
       style={{ animation: "preloader-out 0.5s ease-in 0.9s forwards" }}
     >
       <div className="flex flex-col items-center gap-8">
-        <div className="relative h-24 w-24">
-          <div className="absolute inset-1 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 opacity-50 blur-2xl" />
-          <div className="relative flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-indigo-500 via-violet-500 to-purple-500 font-serif text-4xl font-semibold text-white shadow-[0_18px_50px_rgba(124,58,237,0.45)]">
-            P
-          </div>
+        <div className="relative h-28 w-28">
+          <div className="absolute inset-2 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 opacity-50 blur-2xl" />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={`${basePath}/loader.jpg`}
+            alt=""
+            width={112}
+            height={112}
+            className="relative h-28 w-28 rounded-full border-2 border-white/80 object-cover shadow-[0_18px_50px_rgba(124,58,237,0.45)] dark:border-white/20"
+          />
         </div>
 
         <div className="h-1.5 w-52 overflow-hidden rounded-full bg-black/10 dark:bg-white/10">

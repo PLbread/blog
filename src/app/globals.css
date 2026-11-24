@@ -132,14 +132,14 @@
   @media (prefers-color-scheme: dark) {
     :root {
       --page-bg: #07080d;
-      --page-fg: #eef0f7;
-      --page-muted: #aeb4c8;
-      --page-line: rgba(255, 255, 255, 0.14);
-      --page-accent: #8f99ff;
-      --page-accent-2: #c98bff;
+      --page-fg: #f7f8fc;
+      --page-muted: #c9cddc;
+      --page-line: rgba(255, 255, 255, 0.17);
+      --page-accent: #a8b0ff;
+      --page-accent-2: #d8a2ff;
 
-      --glass-bg: rgba(255, 255, 255, 0.075);
-      --glass-border: rgba(255, 255, 255, 0.16);
+      --glass-bg: rgba(255, 255, 255, 0.085);
+      --glass-border: rgba(255, 255, 255, 0.18);
       --glass-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
       --glass-shadow-hover: 0 16px 44px rgba(139, 92, 246, 0.2);
       --glass-highlight: rgba(255, 255, 255, 0.14);
