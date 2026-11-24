@@ -58,6 +58,9 @@ jobs:
 
       - name: 配置 Pages
         uses: actions/configure-pages@v5
+        with:
+          # 仓库若尚未启用 Pages，自动开启，省去手动到 Settings 操作
+          enablement: true
 
       - name: 上传产物
         uses: actions/upload-pages-artifact@v3
