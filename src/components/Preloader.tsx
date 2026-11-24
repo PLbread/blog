@@ -10,7 +10,7 @@ export function Preloader() {
   return (
     <div
       aria-hidden="true"
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-[#f5f6fb] dark:bg-[#07080d]"
+      className="pointer-events-none fixed inset-0 z-[100] flex items-center justify-center bg-[#f5f6fb] dark:bg-[#07080d]"
       style={{ animation: "preloader-out 0.5s ease-in 0.9s forwards" }}
     >
       <div className="flex flex-col items-center gap-8">
