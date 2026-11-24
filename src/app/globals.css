@@ -132,14 +132,14 @@
   @media (prefers-color-scheme: dark) {
     :root {
       --page-bg: #07080d;
-      --page-fg: #e7e9f2;
-      --page-muted: #969cb3;
-      --page-line: rgba(255, 255, 255, 0.09);
-      --page-accent: #818cf8;
-      --page-accent-2: #c084fc;
+      --page-fg: #eef0f7;
+      --page-muted: #aeb4c8;
+      --page-line: rgba(255, 255, 255, 0.14);
+      --page-accent: #8f99ff;
+      --page-accent-2: #c98bff;
 
-      --glass-bg: rgba(255, 255, 255, 0.065);
-      --glass-border: rgba(255, 255, 255, 0.13);
+      --glass-bg: rgba(255, 255, 255, 0.075);
+      --glass-border: rgba(255, 255, 255, 0.16);
       --glass-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
       --glass-shadow-hover: 0 16px 44px rgba(139, 92, 246, 0.2);
       --glass-highlight: rgba(255, 255, 255, 0.14);
@@ -156,7 +156,19 @@
     color: var(--page-fg);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+  }
+
+  /*
+   * 深色背景上用 antialiased 会削弱笔画，小字发虚。
+   * 系统处于深色模式时交还给系统渲染，字更实。
+   */
+  @media (prefers-color-scheme: dark) {
+    body {
+      -webkit-font-smoothing: auto;
+      -moz-osx-font-smoothing: auto;
+    }
   }
 
   ::selection {

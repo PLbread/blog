@@ -15,7 +15,7 @@ export function TagCloud({ tags }: { tags: TagCount[] }) {
         {tags.map((tag) => (
           <span
             key={tag.name}
-            className="inline-flex items-center gap-1.5 rounded-full border border-[var(--page-line)] px-3.5 py-1.5 text-[15px] text-[var(--page-muted)] transition-colors hover:border-[var(--page-accent)] hover:text-[var(--page-accent)]"
+            className="inline-flex items-center gap-1.5 rounded-full border border-[var(--page-line)] bg-white/5 px-3.5 py-1.5 text-[15px] font-medium text-[var(--page-muted)] transition-colors hover:border-[var(--page-accent)] hover:text-[var(--page-accent)]"
           >
             {tag.name}
             <span className="font-mono text-[11px] opacity-60">{tag.count}</span>

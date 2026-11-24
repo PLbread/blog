@@ -104,7 +104,7 @@ export default function HomePage() {
               {site.now.map((item) => (
                 <li
                   key={item}
-                  className="flex gap-2.5 text-[15px] leading-7 text-[var(--page-muted)]"
+                  className="flex gap-2.5 text-[15px] font-medium leading-7 text-[var(--page-muted)]"
                 >
                   <span className="mt-[10px] h-1.5 w-1.5 shrink-0 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500" />
                   <span>{item}</span>
