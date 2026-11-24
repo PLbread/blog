@@ -31,7 +31,7 @@ export default async function PostPage({
   const post = await getPostBySlug(slug);
 
   return (
-    <article className="mx-auto w-full max-w-3xl">
+    <article className="mx-auto w-full max-w-4xl">
       <header className="animate-fade-up mb-9">
         <Link
           href="/"
