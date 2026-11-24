@@ -30,7 +30,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <Preloader />
         <Background />
         <SiteHeader />
-        <main className="relative z-10 mx-auto w-full max-w-4xl flex-1 px-5 pt-24 pb-16 sm:px-8 sm:pt-28">
+        <main className="relative z-10 mx-auto w-full max-w-7xl flex-1 px-5 pt-24 pb-16 sm:px-8 sm:pt-32">
           {children}
         </main>
         <SiteFooter />

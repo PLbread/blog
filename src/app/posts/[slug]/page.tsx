@@ -31,20 +31,20 @@ export default async function PostPage({
   const post = await getPostBySlug(slug);
 
   return (
-    <article>
+    <article className="mx-auto w-full max-w-3xl">
       <header className="animate-fade-up mb-9">
         <Link
           href="/"
-          className="mb-8 inline-flex items-center gap-2 font-mono text-[12.5px] text-[var(--page-muted)] transition-colors hover:text-[var(--page-accent)]"
+          className="mb-8 inline-flex items-center gap-2 font-mono text-[13px] text-[var(--page-muted)] transition-colors hover:text-[var(--page-accent)]"
         >
           ← 返回文章列表
         </Link>
 
-        <h1 className="font-serif text-[2.1rem] font-semibold leading-[1.25] tracking-tight sm:text-[3rem]">
+        <h1 className="font-serif text-[2.2rem] font-semibold leading-[1.25] tracking-tight sm:text-[3.1rem]">
           {post.title}
         </h1>
 
-        <div className="mt-6 flex flex-wrap items-center gap-x-3.5 gap-y-2 font-mono text-[12.5px] text-[var(--page-muted)]">
+        <div className="mt-6 flex flex-wrap items-center gap-x-3.5 gap-y-2 font-mono text-[13px] text-[var(--page-muted)]">
           <time dateTime={post.date} className="tabular-nums">
             {post.date}
           </time>
@@ -61,7 +61,7 @@ export default async function PostPage({
         </div>
       </header>
 
-      <div className="glass animate-fade-up rounded-3xl bg-white/70 px-6 py-9 sm:px-10 sm:py-12 dark:bg-[#0b0d16]/60">
+      <div className="glass animate-fade-up rounded-3xl bg-white/70 px-7 py-10 sm:px-11 sm:py-12 dark:bg-[#0b0d16]/60">
         <div
           className="prose prose-lg max-w-none dark:prose-invert prose-headings:font-serif prose-headings:tracking-tight prose-a:text-[var(--page-accent)]"
           dangerouslySetInnerHTML={{ __html: post.contentHtml }}
@@ -71,7 +71,7 @@ export default async function PostPage({
       <footer className="mt-9 flex items-center justify-between">
         <Link
           href="/"
-          className="glass rounded-full px-5 py-2.5 font-mono text-[12.5px] text-[var(--page-muted)] transition-colors hover:text-[var(--page-accent)]"
+          className="glass glass-lift rounded-full px-5 py-2.5 font-mono text-[13px] text-[var(--page-muted)] transition-colors hover:text-[var(--page-accent)]"
         >
           ← 全部文章
         </Link>

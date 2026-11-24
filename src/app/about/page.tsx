@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Avatar } from "@/components/Avatar";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -7,17 +8,20 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div>
-      <header className="animate-fade-up mb-9">
-        <h1 className="font-serif text-4xl font-semibold tracking-tight sm:text-5xl">
-          关于我
-        </h1>
-        <p className="mt-3 font-mono text-xs uppercase tracking-[0.16em] text-[var(--page-muted)]">
-          about
-        </p>
+    <div className="mx-auto w-full max-w-3xl">
+      <header className="animate-fade-up mb-9 flex items-center gap-5">
+        <Avatar size={72} float={false} showStatus={false} />
+        <div>
+          <h1 className="font-serif text-4xl font-semibold tracking-tight sm:text-5xl">
+            关于我
+          </h1>
+          <p className="mt-2 font-mono text-xs uppercase tracking-[0.16em] text-[var(--page-muted)]">
+            about
+          </p>
+        </div>
       </header>
 
-      <div className="glass animate-fade-up space-y-6 rounded-3xl bg-white/70 px-6 py-9 text-[16.5px] leading-[1.95] text-[var(--page-muted)] sm:px-10 sm:py-11 dark:bg-[#0b0d16]/60">
+      <div className="glass animate-fade-up space-y-6 rounded-3xl bg-white/70 px-7 py-10 text-[17px] leading-[1.95] text-[var(--page-muted)] sm:px-11 sm:py-12 dark:bg-[#0b0d16]/60">
         <p>
           你好，我是{" "}
           <span className="font-serif text-lg text-[var(--page-fg)]">{site.author}</span>。
@@ -33,7 +37,7 @@ export default function AboutPage() {
         <p>如果你想聊聊，可以通过下面的方式找到我。</p>
       </div>
 
-      <ul className="animate-fade-up mt-4 grid gap-4 sm:grid-cols-2">
+      <ul className="animate-fade-up mt-5 grid gap-4 sm:grid-cols-2">
         <li>
           <a
             href={site.github}
@@ -44,7 +48,7 @@ export default function AboutPage() {
             <span className="font-mono text-[11.5px] uppercase tracking-widest text-[var(--page-muted)]">
               GitHub
             </span>
-            <span className="text-[15px] text-[var(--page-accent)]">
+            <span className="text-[15.5px] text-[var(--page-accent)]">
               {site.github.replace(/^https?:\/\/(www\.)?/, "")}
             </span>
           </a>
@@ -57,7 +61,7 @@ export default function AboutPage() {
             <span className="font-mono text-[11.5px] uppercase tracking-widest text-[var(--page-muted)]">
               Email
             </span>
-            <span className="text-[15px] text-[var(--page-accent)]">{site.email}</span>
+            <span className="text-[15.5px] text-[var(--page-accent)]">{site.email}</span>
           </a>
         </li>
       </ul>
