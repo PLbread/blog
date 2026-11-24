@@ -11,7 +11,7 @@ export const site = {
   /** 用于 <meta name="description"> 与分享卡片 */
   description: "PLbread 的个人博客，记录技术笔记与日常思考。",
   /** 线上地址，部署后改成你的真实域名（用于生成绝对链接） */
-  url: "https://your-name.github.io",
+  url: "https://plbread.github.io/blog",
   /** 社交链接，留空字符串则隐藏 */
   github: "https://github.com/PLbread",
   email: "hello@example.com",

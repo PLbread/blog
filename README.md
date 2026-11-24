@@ -79,7 +79,7 @@ export const site = {
   author: "PLbread",            // 页头显示的名字
   tagline: "……",                // 首页大标题下的简介
   description: "……",            // 搜索描述
-  url: "https://your-name.github.io",  // ★ 部署后改成真实地址
+  url: "https://plbread.github.io/blog",  // 部署后的真实地址
   github: "https://github.com/PLbread",
   email: "hello@example.com",
   nav: [ /* 导航项 */ ],
