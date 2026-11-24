@@ -7,6 +7,7 @@ import { site } from "@/lib/site";
 export default function HomePage() {
   const posts = getAllPosts();
   const year = new Date().getFullYear();
+  const basePath = process.env.PAGES_BASE_PATH ?? "";
 
   const tagMap = new Map<string, number>();
   for (const post of posts) {
@@ -86,6 +87,7 @@ export default function HomePage() {
                   key={post.slug}
                   post={post}
                   index={index}
+                  basePath={basePath}
                   style={{ animationDelay: `${Math.min(index, 8) * 70}ms` }}
                 />
               ))}

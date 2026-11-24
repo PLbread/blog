@@ -1,14 +1,17 @@
 import Link from "next/link";
 import type { CSSProperties } from "react";
+import { ViewCount } from "@/components/ViewCount";
 import type { PostMeta } from "@/lib/posts";
 
 export function PostCard({
   post,
   index,
+  basePath,
   style,
 }: {
   post: PostMeta;
   index: number;
+  basePath: string;
   style?: CSSProperties;
 }) {
   return (
@@ -55,8 +58,9 @@ export function PostCard({
               {tag}
             </span>
           ))}
-          <span className="ml-auto font-mono text-[12px] text-[var(--page-muted)]">
-            {post.readingTime} 分钟
+          <span className="ml-auto flex items-center gap-2.5 font-mono text-[12px] text-[var(--page-muted)]">
+            <ViewCount path={`/posts/${post.slug}/`} basePath={basePath} />
+            <span>{post.readingTime} 分钟</span>
           </span>
         </div>
       </Link>

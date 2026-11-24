@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { ArticleStats } from "@/components/ArticleStats";
 import { getAllSlugs, getPostBySlug } from "@/lib/posts";
 
 /** 只生成 generateStaticParams 里列出的路径，其余一律 404 */
@@ -29,6 +30,7 @@ export default async function PostPage({
 }) {
   const { slug } = await params;
   const post = await getPostBySlug(slug);
+  const basePath = process.env.PAGES_BASE_PATH ?? "";
 
   return (
     <article className="mx-auto w-full max-w-4xl">
@@ -50,6 +52,7 @@ export default async function PostPage({
           </time>
           <span aria-hidden="true">·</span>
           <span>{post.readingTime} 分钟阅读</span>
+          <ArticleStats path={`/posts/${slug}/`} basePath={basePath} />
           {post.tags.map((tag) => (
             <span
               key={tag}

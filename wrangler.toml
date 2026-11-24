@@ -1,0 +1,13 @@
+# Cloudflare Pages 项目配置
+# 部署命令：pnpm pages:deploy
+# 注意：站点部署在根路径（pages.dev 域名），因此构建时 PAGES_BASE_PATH 必须为空。
+
+name = "plbread-blog"
+compatibility_date = "2026-01-01"
+pages_build_output_dir = "out"
+
+# KV 绑定：创建 namespace 后把 id 填进来
+# 创建命令：pnpm exec wrangler kv namespace create BLOG_STATS
+[[kv_namespaces]]
+binding = "BLOG_STATS"
+id = "c14f98eadc654980a48fe5373d92ce89"
