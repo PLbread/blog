@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import "./globals.css";
+import { Background } from "@/components/Background";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { site } from "@/lib/site";
@@ -18,8 +19,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="zh-CN">
       <body className="flex min-h-screen flex-col">
+        <Background />
         <SiteHeader />
-        <main className="mx-auto w-full max-w-3xl flex-1 px-6 py-12 sm:py-16">
+        <main className="relative z-10 mx-auto w-full max-w-3xl flex-1 px-5 pt-24 pb-16 sm:px-6 sm:pt-28">
           {children}
         </main>
         <SiteFooter />

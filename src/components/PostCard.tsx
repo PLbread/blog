@@ -1,38 +1,50 @@
 import Link from "next/link";
-import { formatDate, type PostMeta } from "@/lib/posts";
+import type { CSSProperties } from "react";
+import type { PostMeta } from "@/lib/posts";
 
-export function PostCard({ post }: { post: PostMeta }) {
+export function PostCard({
+  post,
+  style,
+}: {
+  post: PostMeta;
+  style?: CSSProperties;
+}) {
   return (
-    <li className="border-b border-neutral-200/80 last:border-0 dark:border-neutral-800">
-      <Link href={`/posts/${post.slug}/`} className="group block py-6">
-        <div className="flex items-baseline justify-between gap-4">
-          <h3 className="text-[17px] font-medium text-neutral-900 transition-colors group-hover:text-blue-600 dark:text-neutral-100 dark:group-hover:text-blue-400">
+    <li className="animate-fade-up" style={style}>
+      <Link
+        href={`/posts/${post.slug}/`}
+        className="glass glass-lift group block rounded-2xl px-5 py-5"
+      >
+        <div className="flex items-start justify-between gap-4">
+          <h3 className="font-serif text-[17px] font-medium leading-snug transition-colors duration-200 group-hover:text-[var(--page-accent)]">
             {post.title}
           </h3>
           <time
             dateTime={post.date}
-            className="shrink-0 text-[13px] tabular-nums text-neutral-400 dark:text-neutral-500"
+            className="shrink-0 pt-0.5 font-mono text-[10.5px] tabular-nums text-[var(--page-muted)]"
           >
-            {formatDate(post.date)}
+            {post.date}
           </time>
         </div>
 
         {post.summary ? (
-          <p className="mt-2 text-sm leading-7 text-neutral-600 dark:text-neutral-400">
+          <p className="mt-2 line-clamp-2 text-[13.5px] leading-7 text-[var(--page-muted)]">
             {post.summary}
           </p>
         ) : null}
 
-        <div className="mt-3 flex flex-wrap items-center gap-2 text-[12px] text-neutral-400 dark:text-neutral-500">
+        <div className="mt-3.5 flex flex-wrap items-center gap-1.5">
           {post.tags.map((tag) => (
             <span
               key={tag}
-              className="rounded-md bg-neutral-100 px-2 py-0.5 text-neutral-600 dark:bg-neutral-800/60 dark:text-neutral-400"
+              className="rounded-full border border-[var(--page-line)] px-2 py-0.5 font-mono text-[10px] text-[var(--page-muted)]"
             >
               {tag}
             </span>
           ))}
-          <span className="ml-auto">{post.readingTime} 分钟阅读</span>
+          <span className="ml-auto font-mono text-[10px] text-[var(--page-muted)]">
+            {post.readingTime} min
+          </span>
         </div>
       </Link>
     </li>

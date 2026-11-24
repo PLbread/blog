@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { formatDate, getAllSlugs, getPostBySlug } from "@/lib/posts";
+import { getAllSlugs, getPostBySlug } from "@/lib/posts";
 
 /** 只生成 generateStaticParams 里列出的路径，其余一律 404 */
 export const dynamicParams = false;
@@ -32,43 +32,52 @@ export default async function PostPage({
 
   return (
     <article>
-      <header className="mb-10 border-b border-neutral-200/80 pb-8 dark:border-neutral-800">
-        <div className="flex items-center gap-2 text-[13px] text-neutral-400 dark:text-neutral-500">
-          <time dateTime={post.date}>{formatDate(post.date)}</time>
-          <span aria-hidden="true">·</span>
-          <span>{post.readingTime} 分钟阅读</span>
-        </div>
+      <header className="animate-fade-up mb-8">
+        <Link
+          href="/"
+          className="mb-7 inline-flex items-center gap-1.5 font-mono text-[11px] text-[var(--page-muted)] transition-colors hover:text-[var(--page-accent)]"
+        >
+          ← 返回文章列表
+        </Link>
 
-        <h1 className="mt-3 text-3xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-50">
+        <h1 className="font-serif text-3xl font-semibold leading-tight tracking-tight sm:text-[2.6rem]">
           {post.title}
         </h1>
 
-        {post.tags.length > 0 ? (
-          <div className="mt-4 flex flex-wrap gap-2 text-[12px]">
-            {post.tags.map((tag) => (
-              <span
-                key={tag}
-                className="rounded-md bg-neutral-100 px-2 py-0.5 text-neutral-600 dark:bg-neutral-800/60 dark:text-neutral-400"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        ) : null}
+        <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-[10.5px] text-[var(--page-muted)]">
+          <time dateTime={post.date} className="tabular-nums">
+            {post.date}
+          </time>
+          <span aria-hidden="true">·</span>
+          <span>{post.readingTime} min read</span>
+          {post.tags.map((tag) => (
+            <span
+              key={tag}
+              className="rounded-full border border-[var(--page-line)] px-2 py-0.5"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
       </header>
 
-      <div
-        className="prose prose-neutral max-w-none dark:prose-invert"
-        dangerouslySetInnerHTML={{ __html: post.contentHtml }}
-      />
+      <div className="glass animate-fade-up rounded-3xl bg-white/70 px-6 py-8 sm:px-9 sm:py-10 dark:bg-[#0b0d16]/60">
+        <div
+          className="prose prose-neutral max-w-none dark:prose-invert prose-headings:font-serif prose-headings:tracking-tight prose-a:text-[var(--page-accent)]"
+          dangerouslySetInnerHTML={{ __html: post.contentHtml }}
+        />
+      </div>
 
-      <footer className="mt-16 border-t border-neutral-200/80 pt-6 dark:border-neutral-800">
+      <footer className="mt-8 flex items-center justify-between">
         <Link
           href="/"
-          className="text-sm text-neutral-500 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100"
+          className="glass rounded-full px-4 py-2 font-mono text-[11px] text-[var(--page-muted)] transition-colors hover:text-[var(--page-accent)]"
         >
-          ← 返回全部文章
+          ← 全部文章
         </Link>
+        <span className="font-mono text-[10px] text-[var(--page-muted)]">
+          END
+        </span>
       </footer>
     </article>
   );
