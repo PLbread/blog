@@ -1,0 +1,133 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+    "Liberation Mono", monospace;
+}
+
+@layer base {
+  :root {
+    color-scheme: light dark;
+    --page-bg: #ffffff;
+    --page-fg: #1f2328;
+    --page-muted: #656d76;
+    --page-line: #e5e7eb;
+    --page-accent: #2563eb;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --page-bg: #0d1117;
+      --page-fg: #d8dee4;
+      --page-muted: #8b949e;
+      --page-line: #21262d;
+      --page-accent: #58a6ff;
+    }
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--page-bg);
+    color: var(--page-fg);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: #bfdbfe;
+    color: #1e3a8a;
+  }
+}
+
+/*
+ * 代码高亮（rehype-highlight 输出的是 highlight.js 的 token 类名）。
+ * prose 的 pre 背景恒为深色，所以 token 颜色统一用亮色方案即可。
+ */
+pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  color: #e6edf3;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #8b949e;
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-name,
+.hljs-doctag {
+  color: #ff7b72;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute {
+  color: #a5d6ff;
+}
+
+.hljs-number,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link {
+  color: #79c0ff;
+}
+
+.hljs-title,
+.hljs-title.function_,
+.hljs-section,
+.hljs-selector-id {
+  color: #d2a8ff;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-attr,
+.hljs-selector-pseudo {
+  color: #7ee787;
+}
+
+.hljs-built_in {
+  color: #ffa657;
+}
+
+.hljs-property,
+.hljs-selector-class {
+  color: #79c0ff;
+}
+
+.hljs-params {
+  color: #ffa657;
+}
+
+.hljs-meta,
+.hljs-meta .hljs-keyword {
+  color: #8b949e;
+}
+
+.hljs-deletion {
+  color: #ffa198;
+  background-color: #490202;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: 700;
+}
