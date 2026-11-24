@@ -100,7 +100,7 @@ export default function HomePage() {
 
           <div className="glass rounded-2xl p-6">
             <h3 className="font-mono text-[12px] uppercase tracking-[0.18em] text-[var(--page-muted)]">
-              现在
+              计划
             </h3>
             <ul className="mt-4 space-y-3">
               {site.now.map((item) => (

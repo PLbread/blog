@@ -113,7 +113,7 @@ export default function AboutPage() {
       <div className="animate-fade-up mt-6 grid gap-6 sm:grid-cols-2">
         <div className="glass rounded-2xl p-6">
           <h3 className="font-mono text-[11px] uppercase tracking-[0.18em] text-[var(--page-muted)]">
-            正在
+            计划
           </h3>
           <ul className="mt-4 space-y-2.5">
             {site.now.map((item) => (
