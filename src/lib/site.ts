@@ -7,22 +7,22 @@ export const site = {
   /** 作者名，也用于页头 logo */
   author: "PLbread",
   /** 首页大标题下的一句话简介 */
-  tagline: "记录技术笔记、阅读与一些还没想清楚的问题。",
+  tagline: "记录游戏、动漫、技术与一些日常随想。",
   /** 用于 <meta name="description"> 与分享卡片 */
-  description: "PLbread 的个人博客，记录技术笔记与日常思考。",
+  description: "PLbread 的个人博客，记录游戏动漫杂谈、日常随想与工作项目。",
   /** 线上地址，部署后改成你的真实域名（用于生成绝对链接） */
-  url: "https://plbread.github.io/blog",
+  url: "https://plbread-blog.pages.dev",
   /** 社交链接，留空字符串则隐藏 */
   github: "https://github.com/PLbread",
-  email: "hello@example.com",
+  email: "1317813686@qq.com",
   nav: [
     { href: "/", label: "首页" },
     { href: "/about/", label: "关于" },
   ],
   /** 首页侧栏「现在」卡片里显示的内容，随便写 */
   now: [
-    "正在整理这个站点",
-    "之后会陆续更新技术笔记与阅读记录",
+    "在开发一个杀戮尖塔 2 的模组",
+    "记录游戏、动漫与日常随想",
   ],
 } as const;
 

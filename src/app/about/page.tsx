@@ -6,8 +6,8 @@ export const metadata: Metadata = {
   title: "关于",
 };
 
-const focus = ["前端工程", "工具链", "效率工具", "阅读与写作"];
-const stack = ["Next.js 16", "Tailwind CSS 4", "Markdown", "GitHub Pages"];
+const focus = ["AI", "动画", "游戏", "二次元", "前沿技术"];
+const stack = ["Next.js 16", "Tailwind CSS 4", "Markdown", "Cloudflare Pages"];
 
 export default function AboutPage() {
   return (
@@ -30,19 +30,39 @@ export default function AboutPage() {
           <p>
             你好，我是{" "}
             <span className="font-serif text-lg text-[var(--page-fg)]">{site.author}</span>。
-            这里是我的个人博客，用来记录技术笔记、阅读摘要，以及一些还没想清楚的问题。
+            这里是我的个人博客。
           </p>
 
           <p>
-            我平时关注前端工程、工具链和一些效率类的东西，但也会写别的。
-            写作对我来说是一种整理思路的方式——把一个模糊的想法写成文章，
-            它往往就没那么模糊了。
+            今年 22 岁，现在在当普通上班族（姑且可以把我当成程序员）。
+            爱好 AI、动画、游戏和二次元文化。
           </p>
 
           <p>
-            这个站点用 Next.js 静态导出，文章是 Markdown 文件，
-            部署在 GitHub Pages 上。没有服务器，也没有数据库，
-            所以它足够简单，也足够快。
+            游戏玩的挺杂，比较喜欢独游、肉鸽、RPG，常玩的有明日方舟、杀戮尖塔、幻兽帕鲁、泰拉瑞亚等，
+            最近在尝试开发一个杀戮尖塔 2 的模组；音乐目前听的比较多的是民谣和术力口，
+            伍佰是我很喜欢的歌手。
+          </p>
+
+          <p>
+            我很关心前沿技术，倾向于拥抱新技术，对 AI 的发展也是持乐观态度
+            （虽然 AI 有时候有点呆）。
+          </p>
+
+          <p>
+            这个 blog 大概用来记录生活，可能是游戏动漫杂谈，也有可能是日常随想，
+            也有可能是工作项目记录。
+          </p>
+
+          <p>
+            如果你想聊聊天，可以发邮件到{" "}
+            <a
+              href={`mailto:${site.email}`}
+              className="text-[var(--page-accent)] underline-offset-4 hover:underline"
+            >
+              {site.email}
+            </a>
+            。
           </p>
         </div>
 
@@ -70,27 +90,27 @@ export default function AboutPage() {
             </span>
             <span className="text-[15.5px] text-[var(--page-accent)]">{site.email}</span>
           </a>
+
+          <div className="glass rounded-2xl p-6">
+            <h3 className="font-mono text-[11px] uppercase tracking-[0.18em] text-[var(--page-muted)]">
+              关注
+            </h3>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {focus.map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-[var(--page-line)] px-3 py-1.5 text-[13px] text-[var(--page-muted)]"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
 
       {/* 底部信息网格 */}
-      <div className="animate-fade-up mt-6 grid gap-6 sm:grid-cols-3">
-        <div className="glass rounded-2xl p-6">
-          <h3 className="font-mono text-[11px] uppercase tracking-[0.18em] text-[var(--page-muted)]">
-            关注
-          </h3>
-          <div className="mt-4 flex flex-wrap gap-2">
-            {focus.map((item) => (
-              <span
-                key={item}
-                className="rounded-full border border-[var(--page-line)] px-3 py-1.5 text-[13px] text-[var(--page-muted)]"
-              >
-                {item}
-              </span>
-            ))}
-          </div>
-        </div>
-
+      <div className="animate-fade-up mt-6 grid gap-6 sm:grid-cols-2">
         <div className="glass rounded-2xl p-6">
           <h3 className="font-mono text-[11px] uppercase tracking-[0.18em] text-[var(--page-muted)]">
             正在
